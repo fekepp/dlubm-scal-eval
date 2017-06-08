@@ -1,0 +1,297 @@
+#!/bin/bash
+
+
+# Include configuration
+source configuration
+
+
+# Department amounts
+department_amounts=(15 19 16 21 22)
+
+
+# Configuration
+LDFU="ldfu"
+
+LOG_DIRECTORY="logs"
+PROGRAM_DIRECTORY="programs"
+QUERY_DIRECTORY="queries"
+RESULT_DIRECTORY="results"
+RULESET_DIRECTORY="rulesets"
+
+
+mkdir ${LOG_DIRECTORY}
+mkdir ${RESULT_DIRECTORY}
+
+
+
+
+# Adaptation
+#echo "Global Level Adaptation"
+#{
+#	scripts/experiment-adaptation-global
+#} &> ${LOG_DIRECTORY}/adaptation-global.log
+#
+#echo "Universities Level Adaptation"
+#{
+#	scripts/experiment-adaptation-universities
+#} &> ${LOG_DIRECTORY}/adaptation-universities.log
+#
+#echo "Department Level Adaptation"
+#{
+#	scripts/experiment-adaptation-departments
+#} &> ${LOG_DIRECTORY}/adaptation-departments.log
+
+
+
+#for setting in global universities departments
+for setting in global universities departments
+do
+	
+	mkdir "${RESULT_DIRECTORY}/${setting}"
+	mkdir "${LOG_DIRECTORY}/${setting}"
+	
+	
+	#echo -e "setting\tquery_index\tresult\tok_count\tok_time\tok_time_avg\terror_count\terror_time\terror_time_avg\telapsed_time\tinput_origins\tbytes\tbase_triples\tderived_triples" > ${RESULT_DIRECTORY}/${setting}-results.csv
+	#echo -e "setting\t\tquery_index\tresult\tok_count\tok_time\tok_time_avg\terror_count\terror_time\terror_time_avg\telapsed_time\tinput_origins\tbytes\tbase_triples\tderived_triples"
+	
+	echo -e "setting\tquery_index\tresult\tok_count\tok_time\tok_time_avg\telapsed_time\tinput_origins\tbytes\tbase_triples\tderived_triples" > ${RESULT_DIRECTORY}/${setting}-results.csv
+	echo -e "setting\t\tquery_index\tresult\tok_count\tok_time\tok_time_avg\telapsed_time\tinput_origins\tbytes\tbase_triples\tderived_triples"
+	
+	
+
+	if [ "$setting" = "global" ]
+	then
+	
+		echo -e "setting\tquery_index\tresult\tok_count\tok_time\tok_time_avg\telapsed_time\tinput_origins\tbytes\tbase_triples\tderived_triples" > ${RESULT_DIRECTORY}/${setting}-results-g.csv
+		#echo -e "setting\t\tquery_index\tresult\tok_count\tok_time\tok_time_avg\telapsed_time\tinput_origins\tbytes\tbase_triples\tderived_triples"
+		
+	elif [ "$setting" = "universities" ]
+	then
+	
+		echo -e "setting\tuniversity_index\tquery_index\tresult\tok_count\tok_time\tok_time_avg\telapsed_time\tinput_origins\tbytes\tbase_triples\tderived_triples" > ${RESULT_DIRECTORY}/${setting}-results-u.csv
+		#echo -e "setting\tuniversity_index\t\tquery_index\tresult\tok_count\tok_time\tok_time_avg\telapsed_time\tinput_origins\tbytes\tbase_triples\tderived_triples"
+		
+	elif [ "$setting" = "departments" ]
+	then
+	
+		echo -e "setting\tuniversity_index\tdepartment_index\tquery_index\tresult\tok_count\tok_time\tok_time_avg\telapsed_time\tinput_origins\tbytes\tbase_triples\tderived_triples" > ${RESULT_DIRECTORY}/${setting}-results-d.csv
+		#echo -e "setting\tuniversity_index\tdepartment_index\t\tquery_index\tresult\tok_count\tok_time\tok_time_avg\telapsed_time\tinput_origins\tbytes\tbase_triples\tderived_triples"
+		
+	fi
+	
+	
+	#for query_index in 01
+	for query_index in {01..14}
+	do
+		
+		input=""
+		
+		university_index_first=0
+		university_index_last=$(expr $UNIVERSITY_AMOUNT - 1)
+		university_index_padding=${#university_index_last}
+		
+		if [ "$setting" = "global" ]
+		then
+			
+			input="-i http://g.dlubm.ddns.me/evaluation/resources/dlubm-${query_index}"
+			
+		elif [ "$setting" = "universities" ]
+		then
+			
+			for university_index in $(seq ${university_index_first} ${university_index_last})
+			do
+				input="${input} -i http://u${university_index}.dlubm.ddns.me/evaluation/resources/dlubm-${query_index}"
+			done
+			
+		elif [ "$setting" = "departments" ]
+		then
+			
+			for university_index in $(seq ${university_index_first} ${university_index_last})
+			do
+			
+				department_index_first=0
+				department_index_last=$(expr ${department_amounts[${university_index}]} - 1)
+				department_index_padding=${#department_index_last}
+				
+				for department_index in $(seq ${department_index_first} ${department_index_last})
+				do
+					input="${input} -i http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/resources/dlubm-${query_index}"
+				done
+				
+			done
+			
+		fi
+		
+		
+				
+		${LDFU} \
+			-c scripts/ldfu.properties \
+			${input} \
+			-q queries/spo.rq \
+			${RESULT_DIRECTORY}/${setting}/dlubm-${query_index}.nt \
+			2> ${LOG_DIRECTORY}/${setting}/dlubm-${query_index}.log
+		
+		
+		result=`cat ${RESULT_DIRECTORY}/${setting}/dlubm-${query_index}.nt | wc -l`
+#		result=$((result-1))
+		
+		
+		ok_count=$(grep "OK, 200" ${LOG_DIRECTORY}/${setting}/dlubm-${query_index}.log | wc -l)
+		ok_time=$(grep "OK, 200" ${LOG_DIRECTORY}/${setting}/dlubm-${query_index}.log | cut -d ' ' -f 7 | sed s/,//g | paste -sd+ - | bc)
+		ok_time_avg=$(echo "scale=0 ; ${ok_time} / ${ok_count}" | bc)
+#		error_count=$(grep "ERROR, 404" ${LOG_DIRECTORY}/${setting}/dlubm-${query_index}.log | wc -l)
+#		error_time=$(grep "ERROR, 404" ${LOG_DIRECTORY}/${setting}/dlubm-${query_index}.log | cut -d ' ' -f 12 | sed s/,//g | paste -sd+ - | bc)
+#		error_time_avg=$(echo "scale=0 ; ${error_time} / ${error_count}" | bc)
+		
+		elapsed_time=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-${query_index}.log | cut -d ' ' -f 4 | sed s/,//g)
+		input_origins=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-${query_index}.log | cut -d ' ' -f 6 | sed s/,//g)
+		bytes=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-${query_index}.log | cut -d ' ' -f 9 | sed s/,//g)
+		base_triples=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-${query_index}.log | cut -d ' ' -f 11 | sed s/,//g)
+		derived_triples=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-${query_index}.log | cut -d ' ' -f 14 | sed s/,//g)
+		
+		
+#		echo -e "${setting}\t${query_index}\t\t${result}\t${ok_count}\t\t${ok_time}\t${ok_time_avg}\t\t${error_count}\t\t${error_time}\t\t${error_time_avg}\t\t${elapsed_time}\t\t${input_origins}\t\t${bytes}\t${base_triples}\t\t${derived_triples}"
+		
+#		echo -e "${setting}\t${query_index}\t${result}\t${ok_count}\t${ok_time}\t${ok_time_avg}\t${error_count}\t${error_time}\t${error_time_avg}\t${elapsed_time}\t${input_origins}\t${bytes}\t${base_triples}\t${derived_triples}" >> ${RESULT_DIRECTORY}/${setting}-results.csv		
+		
+		echo -e "${setting}\t${query_index}\t\t${result}\t${ok_count}\t\t${ok_time}\t${ok_time_avg}\t\t${elapsed_time}\t\t${input_origins}\t\t${bytes}\t${base_triples}\t\t${derived_triples}"
+		
+		echo -e "${setting}\t${query_index}\t${result}\t${ok_count}\t${ok_time}\t${ok_time_avg}\t${elapsed_time}\t${input_origins}\t${bytes}\t${base_triples}\t${derived_triples}" >> ${RESULT_DIRECTORY}/${setting}-results.csv
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		university_index_first=0
+		university_index_last=$(expr $UNIVERSITY_AMOUNT - 1)
+		university_index_padding=${#university_index_last}
+		
+		if [ "$setting" = "global" ]
+		then
+			
+			curl --silent --show-error --location "http://g.dlubm.ddns.me/scal/current" -o "${LOG_DIRECTORY}/${setting}/dlubm-g-q${query_index}.log"
+			
+			
+			result=`cat ${RESULT_DIRECTORY}/${setting}/dlubm-${query_index}.nt | wc -l`
+			#result=$((result-1))
+			
+			
+			ok_count=$(grep "OK, 200" ${LOG_DIRECTORY}/${setting}/dlubm-g-q${query_index}.log | wc -l)
+			ok_time=$(grep "OK, 200" ${LOG_DIRECTORY}/${setting}/dlubm-g-q${query_index}.log | cut -d ' ' -f 10 | sed s/,//g | paste -sd+ - | bc)
+			ok_time_avg=$(echo "scale=0 ; ${ok_time} / ${ok_count}" | bc)
+			#error_count=$(grep "ERROR, 404" ${LOG_DIRECTORY}/${setting}/dlubm-g-q${query_index}.log | wc -l)
+			#error_time=$(grep "ERROR, 404" ${LOG_DIRECTORY}/${setting}/dlubm-g-q${query_index}.log | cut -d ' ' -f 12 | sed s/,//g | paste -sd+ - | bc)
+			#error_time_avg=$(echo "scale=0 ; ${error_time} / ${error_count}" | bc)
+			
+			elapsed_time=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-g-q${query_index}.log | tail -n 1 | cut -d ' ' -f 7 | sed s/,//g)
+			input_origins=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-g-q${query_index}.log | tail -n 1 | cut -d ' ' -f 9 | sed s/,//g)
+			bytes=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-g-q${query_index}.log | tail -n 1 | cut -d ' ' -f 9 | sed s/,//g)
+			base_triples=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-g-q${query_index}.log | tail -n 1 | cut -d ' ' -f 14 | sed s/,//g)
+			derived_triples=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-g-q${query_index}.log | tail -n 1 | cut -d ' ' -f 17 | sed s/,//g)
+			
+			
+			#echo -e "${setting}\t${query_index}\t\t${result}\t${ok_count}\t\t${ok_time}\t${ok_time_avg}\t\t${error_count}\t\t${error_time}\t\t${error_time_avg}\t\t${elapsed_time}\t\t${input_origins}\t\t${bytes}\t${base_triples}\t\t${derived_triples}"
+			
+			#echo -e "${setting}\t${query_index}\t${result}\t${ok_count}\t${ok_time}\t${ok_time_avg}\t${error_count}\t${error_time}\t${error_time_avg}\t${elapsed_time}\t${input_origins}\t${bytes}\t${base_triples}\t${derived_triples}" >> ${RESULT_DIRECTORY}/${setting}-results.csv		
+			
+			echo -e "${setting}\t${query_index}\t\t${result}\t\t${elapsed_time}\t\t${input_origins}\t\t${bytes}\t${base_triples}\t\t${derived_triples}"
+			
+			echo -e "${setting}\t${query_index}\t${result}\t${elapsed_time}\t${input_origins}\t${bytes}\t${base_triples}\t${derived_triples}" >> ${RESULT_DIRECTORY}/${setting}-results-g.csv
+			
+			
+		elif [ "$setting" = "universities" ]
+		then
+			
+			for university_index in $(seq ${university_index_first} ${university_index_last})
+			do
+				
+				curl --silent --show-error --location "http://u${university_index}.dlubm.ddns.me/scal/current" -o "${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-${query_index}.log"
+				
+				
+				result=`cat ${RESULT_DIRECTORY}/${setting}/dlubm-${query_index}.nt | wc -l`
+				#result=$((result-1))
+				
+				
+				ok_count=$(grep "OK, 200" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-${query_index}.log | wc -l)
+				ok_time=$(grep "OK, 200" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-${query_index}.log | cut -d ' ' -f 10 | sed s/,//g | paste -sd+ - | bc)
+				ok_time_avg=$(echo "scale=0 ; ${ok_time} / ${ok_count}" | bc)
+				#error_count=$(grep "ERROR, 404" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-${query_index}.log | wc -l)
+				#error_time=$(grep "ERROR, 404" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-${query_index}.log | cut -d ' ' -f 12 | sed s/,//g | paste -sd+ - | bc)
+				#error_time_avg=$(echo "scale=0 ; ${error_time} / ${error_count}" | bc)
+				
+				elapsed_time=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-${query_index}.log | tail -n 1 | cut -d ' ' -f 7 | sed s/,//g)
+				input_origins=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-${query_index}.log | tail -n 1 | cut -d ' ' -f 9 | sed s/,//g)
+				bytes=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-${query_index}.log | tail -n 1 | cut -d ' ' -f 9 | sed s/,//g)
+				base_triples=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-${query_index}.log | tail -n 1 | cut -d ' ' -f 14 | sed s/,//g)
+				derived_triples=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-${query_index}.log | tail -n 1 | cut -d ' ' -f 17 | sed s/,//g)
+				
+				
+				#echo -e "${setting}\t${query_index}\t\t${result}\t${ok_count}\t\t${ok_time}\t${ok_time_avg}\t\t${error_count}\t\t${error_time}\t\t${error_time_avg}\t\t${elapsed_time}\t\t${input_origins}\t\t${bytes}\t${base_triples}\t\t${derived_triples}"
+				
+				#echo -e "${setting}\t${query_index}\t${result}\t${ok_count}\t${ok_time}\t${ok_time_avg}\t${error_count}\t${error_time}\t${error_time_avg}\t${elapsed_time}\t${input_origins}\t${bytes}\t${base_triples}\t${derived_triples}" >> ${RESULT_DIRECTORY}/${setting}-results.csv		
+				
+				echo -e "${setting}\t${query_index}\t${university_index}\t\t${result}\t\t${elapsed_time}\t\t${input_origins}\t\t${bytes}\t${base_triples}\t\t${derived_triples}"
+				
+				echo -e "${setting}\t${query_index}\t${university_index}\t${result}\t${elapsed_time}\t${input_origins}\t${bytes}\t${base_triples}\t${derived_triples}" >> ${RESULT_DIRECTORY}/${setting}-results-u.csv
+				
+			done
+			
+		elif [ "$setting" = "departments" ]
+		then
+			
+			for university_index in $(seq ${university_index_first} ${university_index_last})
+			do
+			
+				department_index_first=0
+				department_index_last=$(expr ${department_amounts[${university_index}]} - 1)
+				department_index_padding=${#department_index_last}
+				
+				for department_index in $(seq ${department_index_first} ${department_index_last})
+				do
+				
+					curl --silent --show-error --location "http://d${department_index}.u${university_index}.dlubm.ddns.me/scal/current" -o "${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-d${department_index}-q${query_index}.log"
+					
+					
+					result=`cat ${RESULT_DIRECTORY}/${setting}/dlubm-${query_index}.nt | wc -l`
+					#result=$((result-1))
+					
+					
+					ok_count=$(grep "OK, 200" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-d${department_index}-q${query_index}.log | wc -l)
+					ok_time=$(grep "OK, 200" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-d${department_index}-q${query_index}.log | cut -d ' ' -f 10 | sed s/,//g | paste -sd+ - | bc)
+					ok_time_avg=$(echo "scale=0 ; ${ok_time} / ${ok_count}" | bc)
+					#error_count=$(grep "ERROR, 404" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-d${department_index}-q${query_index}.log | wc -l)
+					#error_time=$(grep "ERROR, 404" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-d${department_index}-q${query_index}.log | cut -d ' ' -f 12 | sed s/,//g | paste -sd+ - | bc)
+					#error_time_avg=$(echo "scale=0 ; ${error_time} / ${error_count}" | bc)
+					
+					elapsed_time=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-d${department_index}-q${query_index}.log | tail -n 1 | cut -d ' ' -f 7 | sed s/,//g)
+					input_origins=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-d${department_index}-q${query_index}.log | tail -n 1 | cut -d ' ' -f 9 | sed s/,//g)
+					bytes=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-d${department_index}-q${query_index}.log | tail -n 1 | cut -d ' ' -f 9 | sed s/,//g)
+					base_triples=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-d${department_index}-q${query_index}.log | tail -n 1 | cut -d ' ' -f 14 | sed s/,//g)
+					derived_triples=$(grep "Elapsed time" ${LOG_DIRECTORY}/${setting}/dlubm-u${university_index}-d${department_index}-q${query_index}.log | tail -n 1 | cut -d ' ' -f 17 | sed s/,//g)
+					
+					
+					#echo -e "${setting}\t${query_index}\t\t${result}\t${ok_count}\t\t${ok_time}\t${ok_time_avg}\t\t${error_count}\t\t${error_time}\t\t${error_time_avg}\t\t${elapsed_time}\t\t${input_origins}\t\t${bytes}\t${base_triples}\t\t${derived_triples}"
+					
+					#echo -e "${setting}\t${query_index}\t${result}\t${ok_count}\t${ok_time}\t${ok_time_avg}\t${error_count}\t${error_time}\t${error_time_avg}\t${elapsed_time}\t${input_origins}\t${bytes}\t${base_triples}\t${derived_triples}" >> ${RESULT_DIRECTORY}/${setting}-results.csv		
+					
+					echo -e "${setting}\t${query_index}\t${university_index}\t${department_index}\t\t${result}\t\t${elapsed_time}\t\t${input_origins}\t\t${bytes}\t${base_triples}\t\t${derived_triples}"
+					
+					echo -e "${setting}\t${query_index}\t${university_index}\t${department_index}\t${result}\t${elapsed_time}\t${input_origins}\t${bytes}\t${base_triples}\t${derived_triples}" >> ${RESULT_DIRECTORY}/${setting}-results-d.csv
+					
+				done
+				
+			done
+			
+		fi
+	
+	
+	done
+done
+
+
+

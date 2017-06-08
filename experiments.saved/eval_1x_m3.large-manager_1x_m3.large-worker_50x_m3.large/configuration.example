@@ -1,0 +1,93 @@
+#!/bin/bash
+
+
+###
+### Basic Configuration
+###
+
+
+##
+## Composition
+##
+
+# Domain
+#	Also used during deployment to configure the reverse proxy
+DOMAIN="dlubm.ddns.me"
+
+# DLUBM
+GRANULARITY="DEPARTMENT"
+SEED=0
+UNIVERSITY_OFFSET=0
+UNIVERSITY_AMOUNT=5
+UNIVERSITY_LIMIT=1
+DEPARTMENT_LIMIT=1
+
+
+##
+## Deployment
+##
+
+# Region
+REGION="eu-central-1"
+
+# Instance amounts
+#	In addition, one evluation instance
+#	Maximum of 20 running instances for accounts without limit increase
+INSTANCE_AMOUNT_SWARM_MANAGER="1"
+INSTANCE_AMOUNT_SWARM_WORKER="18"
+
+# Instance types
+# t2.micro
+# t2.small
+# t2.medium
+# m4.xlarge
+# c4.8xlarge
+INSTANCE_TYPE_SWARM_MANAGER="t2.small"
+INSTANCE_TYPE_SWARM_WORKER="t2.small"
+INSTANCE_TYPE_EVALUATION="m4.xlarge"
+
+
+
+
+###
+### Advanced Configuration
+###
+
+
+##
+## Composition (advanced)
+##
+
+# Images
+IMAGE_ONTOLOGY="fekepp/dlubm:latest"
+IMAGE_GLOBAL="fekepp/dlubm:latest"
+IMAGE_UNIVERSITY="fekepp/dlubm:latest"
+IMAGE_DEPARTMENT="fekepp/dlubm:latest"
+
+# Domain
+DOMAIN_GLOBAL="true"
+DOMAIN_DETAILED="false"
+
+# Networks
+#	Also used during deployment to configure the reverse proxy
+NETWORK_REVERSE_PROXY="reverse_proxy"
+
+
+##
+## Deployment (advanced)
+##
+
+# Security group
+SECURITY_GROUP_NAME="dlubm-ldfu-eval"
+SECURITY_GROUP_DESCRIPTION="DLUBM LD-Fu Evaluation"
+
+# Instance names
+INSTANCE_NAME_PREFIX_SWARM_MANAGER="dlubm-swarm-manager-"
+INSTANCE_NAME_PREFIX_SWARM_WORKER="dlubm-swarm-worker-"
+INSTANCE_NAME_EVALUATION="dlubm-evaluation"
+
+# Machine images
+# ami-107ba77f | RancherOS 1.0.1
+AMI="ami-107ba77f"
+SSH_USER="rancher"
+

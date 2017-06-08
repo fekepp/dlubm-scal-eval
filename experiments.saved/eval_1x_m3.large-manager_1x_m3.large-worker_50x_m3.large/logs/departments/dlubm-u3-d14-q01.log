@@ -1,0 +1,215 @@
+2017-06-08 00:30:37.406591500  00:30:37.406 [qtp2059904228-18] INFO  net.fekepp.ldps.server.Servlet > getResource(String path) > d
+2017-06-08 00:30:37.406610500  00:30:37.406 [qtp2059904228-18] INFO  net.fekepp.ldps.server.Servlet > URI Base > http://d14.u3.dlubm.ddns.me/
+2017-06-08 00:30:37.406612500  00:30:37.406 [qtp2059904228-18] INFO  net.fekepp.ldps.server.Servlet > URI Path > /d
+2017-06-08 00:30:37.406669500  00:30:37.406 [qtp2059904228-18] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > application/rdf+xml
+2017-06-08 00:30:37.406674500  00:30:37.406 [qtp2059904228-18] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > application/n-triples
+2017-06-08 00:30:37.406676500  00:30:37.406 [qtp2059904228-18] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > text/turtle
+2017-06-08 00:30:37.406678500  00:30:37.406 [qtp2059904228-18] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > application/ld+json
+2017-06-08 00:30:37.406691500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5d5aab4
+2017-06-08 00:30:37.406696500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@6fdf05da
+2017-06-08 00:30:37.406707500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.ContainerResourceListener@4e8170c9
+2017-06-08 00:30:37.406712500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@35f255be
+2017-06-08 00:30:37.406723500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@53656deb
+2017-06-08 00:30:37.406728500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@351bc56b
+2017-06-08 00:30:37.406739500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@258ee4be
+2017-06-08 00:30:37.406743500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.scal.run.DefaultRunManager$2@66b2d683
+2017-06-08 00:30:37.406745500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@31c1e150
+2017-06-08 00:30:37.406757500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@23ae17d7
+2017-06-08 00:30:37.406761500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@77ac2216
+2017-06-08 00:30:37.406763500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@7e26909d
+2017-06-08 00:30:37.406774500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5316fecd
+2017-06-08 00:30:37.406779500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@7274a66f
+2017-06-08 00:30:37.406790500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5f93c1ef
+2017-06-08 00:30:37.406793500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@31d33dec
+2017-06-08 00:30:37.406795500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.s.FilesystemStorageManager > getResource(Description description) > description.getIdentifier()=d
+2017-06-08 00:30:37.406825500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.s.FilesystemStorageManager > Path > /var/lib/dlubm/d
+2017-06-08 00:30:37.406981500  00:30:37.406 [qtp2059904228-18] INFO  n.f.l.s.FilesystemStorageManager > Path is not a directory
+2017-06-08 00:30:37.407353500  00:30:37.407 [qtp2059904228-18] INFO  n.f.l.s.FilesystemStorageManager > Path is file with extension and known format > /var/lib/dlubm/d.ttl
+2017-06-08 00:30:37.407658500  00:30:37.407 [qtp2059904228-18] INFO  n.fekepp.ldps.converter.RdfConverter > Parser found > inputFormat=net.fekepp.ldps.format.TurtleFormat@762c1a11 | parser=org.semanticweb.yars.turtle.TurtleParser@27925096
+2017-06-08 00:30:37.407739500  00:30:37.407 [qtp2059904228-18] INFO  n.fekepp.ldps.converter.RdfConverter > Serializer found > outputFormat=net.fekepp.ldps.format.RdfXmlFormat@2bbb5044 | serializer=net.fekepp.ldps.serializer.CallbackRdfXmlSerializer@fd44eb2
+2017-06-08 00:30:37.407756500  00:30:37.407 [qtp2059904228-18] INFO  n.fekepp.ldps.converter.RdfConverter > Parsing > inputFormat=net.fekepp.ldps.format.TurtleFormat@762c1a11 | inputStream=java.io.FileInputStream@a7d937f | outputFormat=net.fekepp.ldps.format.RdfXmlFormat@2bbb5044 | outputStream=org.glassfish.jersey.message.internal.WriterInterceptorExecutor$UnCloseableOutputStream@5da23a37 | callback=net.fekepp.ldps.serializer.CallbackRdfXmlSerializer@fd44eb2
+2017-06-08 00:30:37.407809500  00:30:37.407 [qtp2059904228-18] INFO  e.k.a.d.i.s.AbstractSerialiser > Starting edu.kit.aifb.datafu.io.serialisers.RdfXmlSerialiser@6801c7f5
+2017-06-08 00:30:43.930152500  00:30:43.923 [qtp2059904228-17] INFO  net.fekepp.ldps.server.Servlet > getResource(String path) > d
+2017-06-08 00:30:43.930178500  00:30:43.923 [qtp2059904228-17] INFO  net.fekepp.ldps.server.Servlet > URI Base > http://d14.u3.dlubm.ddns.me/
+2017-06-08 00:30:43.930181500  00:30:43.923 [qtp2059904228-17] INFO  net.fekepp.ldps.server.Servlet > URI Path > /d
+2017-06-08 00:30:43.930183500  00:30:43.923 [qtp2059904228-17] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > application/rdf+xml
+2017-06-08 00:30:43.930186500  00:30:43.923 [qtp2059904228-17] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > application/n-triples
+2017-06-08 00:30:43.930188500  00:30:43.923 [qtp2059904228-17] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > text/turtle
+2017-06-08 00:30:43.930191500  00:30:43.923 [qtp2059904228-17] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > application/ld+json
+2017-06-08 00:30:43.930193500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5d5aab4
+2017-06-08 00:30:43.930195500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@6fdf05da
+2017-06-08 00:30:43.930198500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.ContainerResourceListener@4e8170c9
+2017-06-08 00:30:43.930200500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@35f255be
+2017-06-08 00:30:43.930202500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@53656deb
+2017-06-08 00:30:43.930205500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@351bc56b
+2017-06-08 00:30:43.930207500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@258ee4be
+2017-06-08 00:30:43.930209500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.scal.run.DefaultRunManager$2@66b2d683
+2017-06-08 00:30:43.930212500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@31c1e150
+2017-06-08 00:30:43.930214500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@23ae17d7
+2017-06-08 00:30:43.930217500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@77ac2216
+2017-06-08 00:30:43.930219500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@7e26909d
+2017-06-08 00:30:43.930221500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5316fecd
+2017-06-08 00:30:43.930224500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@7274a66f
+2017-06-08 00:30:43.930226500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5f93c1ef
+2017-06-08 00:30:43.930228500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@31d33dec
+2017-06-08 00:30:43.930230500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.s.FilesystemStorageManager > getResource(Description description) > description.getIdentifier()=d
+2017-06-08 00:30:43.930233500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.s.FilesystemStorageManager > Path > /var/lib/dlubm/d
+2017-06-08 00:30:43.930235500  00:30:43.923 [qtp2059904228-17] INFO  n.f.l.s.FilesystemStorageManager > Path is not a directory
+2017-06-08 00:30:43.930237500  00:30:43.924 [qtp2059904228-17] INFO  n.f.l.s.FilesystemStorageManager > Path is file with extension and known format > /var/lib/dlubm/d.ttl
+2017-06-08 00:30:43.930240500  00:30:43.924 [qtp2059904228-17] INFO  n.fekepp.ldps.converter.RdfConverter > Parser found > inputFormat=net.fekepp.ldps.format.TurtleFormat@762c1a11 | parser=org.semanticweb.yars.turtle.TurtleParser@1b0d035a
+2017-06-08 00:30:43.930242500  00:30:43.924 [qtp2059904228-17] INFO  n.fekepp.ldps.converter.RdfConverter > Serializer found > outputFormat=net.fekepp.ldps.format.RdfXmlFormat@2bbb5044 | serializer=net.fekepp.ldps.serializer.CallbackRdfXmlSerializer@55644d22
+2017-06-08 00:30:43.930244500  00:30:43.924 [qtp2059904228-17] INFO  n.fekepp.ldps.converter.RdfConverter > Parsing > inputFormat=net.fekepp.ldps.format.TurtleFormat@762c1a11 | inputStream=java.io.FileInputStream@4a6f87f8 | outputFormat=net.fekepp.ldps.format.RdfXmlFormat@2bbb5044 | outputStream=org.glassfish.jersey.message.internal.WriterInterceptorExecutor$UnCloseableOutputStream@387b0748 | callback=net.fekepp.ldps.serializer.CallbackRdfXmlSerializer@55644d22
+2017-06-08 00:30:43.930247500  00:30:43.924 [qtp2059904228-17] INFO  e.k.a.d.i.s.AbstractSerialiser > Starting edu.kit.aifb.datafu.io.serialisers.RdfXmlSerialiser@4b9fc4ce
+2017-06-08 00:30:44.243138500  00:30:44.243 [qtp2059904228-15] INFO  net.fekepp.ldps.server.Servlet > getResource(String path) > 
+2017-06-08 00:30:44.243156500  00:30:44.243 [qtp2059904228-15] INFO  net.fekepp.ldps.server.Servlet > URI Base > http://localhost/
+2017-06-08 00:30:44.243158500  00:30:44.243 [qtp2059904228-15] INFO  net.fekepp.ldps.server.Servlet > URI Path > /
+2017-06-08 00:30:44.243183500  00:30:44.243 [qtp2059904228-15] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > */*
+2017-06-08 00:30:44.243255500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5d5aab4
+2017-06-08 00:30:44.243261500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@6fdf05da
+2017-06-08 00:30:44.243290500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.ContainerResourceListener@4e8170c9
+2017-06-08 00:30:44.243296500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@35f255be
+2017-06-08 00:30:44.243298500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@53656deb
+2017-06-08 00:30:44.243300500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@351bc56b
+2017-06-08 00:30:44.243303500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@258ee4be
+2017-06-08 00:30:44.243318500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.scal.run.DefaultRunManager$2@66b2d683
+2017-06-08 00:30:44.243323500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@31c1e150
+2017-06-08 00:30:44.243325500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@23ae17d7
+2017-06-08 00:30:44.243328500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@77ac2216
+2017-06-08 00:30:44.243340500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@7e26909d
+2017-06-08 00:30:44.243344500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5316fecd
+2017-06-08 00:30:44.243347500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@7274a66f
+2017-06-08 00:30:44.243349500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5f93c1ef
+2017-06-08 00:30:44.243360500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@31d33dec
+2017-06-08 00:30:44.243364500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.s.FilesystemStorageManager > getResource(Description description) > description.getIdentifier()=
+2017-06-08 00:30:44.243435500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.s.FilesystemStorageManager > Path > /var/lib/dlubm
+2017-06-08 00:30:44.243453500  00:30:44.243 [qtp2059904228-15] INFO  n.f.l.s.FilesystemStorageManager > Path is a directory
+2017-06-08 00:30:44.244031500  00:30:44.243 [qtp2059904228-15] INFO  n.fekepp.ldps.converter.RdfConverter > Parser found > inputFormat=net.fekepp.ldps.format.TurtleFormat@762c1a11 | parser=org.semanticweb.yars.turtle.TurtleParser@17bde761
+2017-06-08 00:30:44.244085500  00:30:44.244 [qtp2059904228-15] INFO  n.fekepp.ldps.converter.RdfConverter > Serializer found > outputFormat=net.fekepp.ldps.format.TurtleFormat@762c1a11 | serializer=net.fekepp.ldps.serializer.CallbackTurtleSerializer@1596ee91
+2017-06-08 00:30:44.244102500  00:30:44.244 [qtp2059904228-15] INFO  n.fekepp.ldps.converter.RdfConverter > Parsing > inputFormat=net.fekepp.ldps.format.TurtleFormat@762c1a11 | inputStream=java.io.ByteArrayInputStream@a1894fe | outputFormat=net.fekepp.ldps.format.TurtleFormat@762c1a11 | outputStream=org.glassfish.jersey.message.internal.WriterInterceptorExecutor$UnCloseableOutputStream@7a44515e | callback=net.fekepp.ldps.serializer.CallbackTurtleSerializer@1596ee91
+2017-06-08 00:30:44.244159500  00:30:44.244 [qtp2059904228-15] INFO  e.k.a.d.i.s.AbstractSerialiser > Starting edu.kit.aifb.datafu.io.serialisers.TurtleSerialiser@23a2798
+2017-06-08 00:30:52.669268500  00:30:52.669 [qtp2059904228-16] INFO  net.fekepp.ldps.server.Servlet > getResource(String path) > evaluation/resources/dlubm-01
+2017-06-08 00:30:52.669282500  00:30:52.669 [qtp2059904228-16] INFO  net.fekepp.ldps.server.Servlet > URI Base > http://d14.u3.dlubm.ddns.me/
+2017-06-08 00:30:52.669284500  00:30:52.669 [qtp2059904228-16] INFO  net.fekepp.ldps.server.Servlet > URI Path > /evaluation/resources/dlubm-01
+2017-06-08 00:30:52.669313500  00:30:52.669 [qtp2059904228-16] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > application/rdf+xml
+2017-06-08 00:30:52.669318500  00:30:52.669 [qtp2059904228-16] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > application/n-triples
+2017-06-08 00:30:52.669331500  00:30:52.669 [qtp2059904228-16] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > text/turtle
+2017-06-08 00:30:52.669335500  00:30:52.669 [qtp2059904228-16] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > application/ld+json
+2017-06-08 00:30:52.669376500  00:30:52.669 [qtp2059904228-16] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5d5aab4
+2017-06-08 00:30:52.669393500  00:30:52.669 [qtp2059904228-16] INFO  n.fekepp.scal.run.DefaultRunManager > Controller > Get nodes
+2017-06-08 00:30:52.669406500  00:30:52.669 [qtp2059904228-16] INFO  net.fekepp.scal.run.RunController > Evaluation start with delay > 0
+2017-06-08 00:30:52.669448500  00:30:52.669 [qtp2059904228-16] INFO  e.k.aifb.datafu.io.sink.EvaluateSink > Opening sinks...
+2017-06-08 00:30:52.669492500  00:30:52.669 [qtp2059904228-16] INFO  e.k.aifb.datafu.io.sink.EvaluateSink > Opening sink net.fekepp.scal.run.QuerySinkResourceBridge@52617596...
+2017-06-08 00:30:52.669509500  00:30:52.669 [qtp2059904228-16] INFO  n.f.scal.run.QuerySinkResourceBridge > Sink -> Resource > Opened > evaluation/resources/dlubm-01
+2017-06-08 00:30:52.669514500  00:30:52.669 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > getResource(Description description) > description.getIdentifier()=evaluation/resources/dlubm-01
+2017-06-08 00:30:52.669569500  00:30:52.669 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > Path > /var/lib/dlubm/evaluation/resources/dlubm-01
+2017-06-08 00:30:52.670134500  00:30:52.669 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > Path is not a directory
+2017-06-08 00:30:52.674024500  00:30:52.670 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > Path is file with extension and known format > /var/lib/dlubm/evaluation/resources/dlubm-01.ttl
+2017-06-08 00:30:52.674033500  00:30:52.670 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > setResource(Source source) > description.getIdentifier()=evaluation/resources/dlubm-01
+2017-06-08 00:30:52.674035500  00:30:52.670 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > path > /var/lib/dlubm/evaluation/resources/dlubm-01
+2017-06-08 00:30:52.674037500  00:30:52.670 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > Parent path is existing
+2017-06-08 00:30:52.674039500  00:30:52.671 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > File with extension exists > net.fekepp.ldps.format.TurtleFormat@762c1a11
+2017-06-08 00:30:52.674041500  00:30:52.671 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > Source format is available
+2017-06-08 00:30:52.674042500  00:30:52.671 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > Register trigger and react on containers
+2017-06-08 00:30:52.674044500  00:30:52.671 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > source.getFormatConverter()=net.fekepp.ldps.converter.RdfConverter@3e39b4da
+2017-06-08 00:30:52.674046500  00:30:52.671 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > source.getFormatConverter() instanceof RdfConverter
+2017-06-08 00:30:52.674048500  00:30:52.671 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > Register listener > predicate=<http://www.w3.org/1999/02/22-rdf-syntax-ns#type> | object=<http://www.w3.org/ns/ldp#Container>
+2017-06-08 00:30:52.674050500  00:30:52.671 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > Create file with extension > /var/lib/dlubm/evaluation/resources/dlubm-01.ttl
+2017-06-08 00:30:52.674052500  00:30:52.671 [qtp2059904228-16] INFO  e.k.a.d.i.s.AbstractSerialiser > Starting edu.kit.aifb.datafu.io.serialisers.TurtleSerialiser@42045f35
+2017-06-08 00:30:52.674054500  00:30:52.673 [qtp2059904228-16] INFO  e.k.a.d.i.i.r.EvaluateRequestOrigin > Considering http://d14.u3.dlubm.ddns.me/d, GET(http://d14.u3.dlubm.ddns.me/d, depth 0)
+2017-06-08 00:30:52.674056500  00:30:52.673 [qtp2059904228-16] INFO  e.k.a.d.i.i.r.EvaluateRequestOrigin > Normalising document to http://d14.u3.dlubm.ddns.me/d
+2017-06-08 00:30:52.680724500  00:30:52.680 [qtp2059904228-19] INFO  net.fekepp.ldps.server.Servlet > getResource(String path) > d
+2017-06-08 00:30:52.680732500  00:30:52.680 [qtp2059904228-19] INFO  net.fekepp.ldps.server.Servlet > URI Base > http://d14.u3.dlubm.ddns.me/
+2017-06-08 00:30:52.680752500  00:30:52.680 [qtp2059904228-19] INFO  net.fekepp.ldps.server.Servlet > URI Path > /d
+2017-06-08 00:30:52.680757500  00:30:52.680 [qtp2059904228-19] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > application/rdf+xml
+2017-06-08 00:30:52.680770500  00:30:52.680 [qtp2059904228-19] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > application/n-triples
+2017-06-08 00:30:52.680774500  00:30:52.680 [qtp2059904228-19] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > text/turtle
+2017-06-08 00:30:52.680776500  00:30:52.680 [qtp2059904228-19] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > application/ld+json
+2017-06-08 00:30:52.680789500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5d5aab4
+2017-06-08 00:30:52.680802500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@6fdf05da
+2017-06-08 00:30:52.680807500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.ContainerResourceListener@4e8170c9
+2017-06-08 00:30:52.680818500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@35f255be
+2017-06-08 00:30:52.680822500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@53656deb
+2017-06-08 00:30:52.680833500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@351bc56b
+2017-06-08 00:30:52.680837500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@258ee4be
+2017-06-08 00:30:52.680849500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.scal.run.DefaultRunManager$2@66b2d683
+2017-06-08 00:30:52.680854500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@31c1e150
+2017-06-08 00:30:52.680856500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@23ae17d7
+2017-06-08 00:30:52.680868500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@77ac2216
+2017-06-08 00:30:52.680872500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@7e26909d
+2017-06-08 00:30:52.680894500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5316fecd
+2017-06-08 00:30:52.680899500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@7274a66f
+2017-06-08 00:30:52.680901500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5f93c1ef
+2017-06-08 00:30:52.680912500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@31d33dec
+2017-06-08 00:30:52.680917500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.s.FilesystemStorageManager > getResource(Description description) > description.getIdentifier()=d
+2017-06-08 00:30:52.680929500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.s.FilesystemStorageManager > Path > /var/lib/dlubm/d
+2017-06-08 00:30:52.681012500  00:30:52.680 [qtp2059904228-19] INFO  n.f.l.s.FilesystemStorageManager > Path is not a directory
+2017-06-08 00:30:52.681368500  00:30:52.681 [qtp2059904228-19] INFO  n.f.l.s.FilesystemStorageManager > Path is file with extension and known format > /var/lib/dlubm/d.ttl
+2017-06-08 00:30:52.681639500  00:30:52.681 [qtp2059904228-19] INFO  n.fekepp.ldps.converter.RdfConverter > Parser found > inputFormat=net.fekepp.ldps.format.TurtleFormat@762c1a11 | parser=org.semanticweb.yars.turtle.TurtleParser@206e9bb3
+2017-06-08 00:30:52.681715500  00:30:52.681 [qtp2059904228-19] INFO  n.fekepp.ldps.converter.RdfConverter > Serializer found > outputFormat=net.fekepp.ldps.format.RdfXmlFormat@2bbb5044 | serializer=net.fekepp.ldps.serializer.CallbackRdfXmlSerializer@7067a82
+2017-06-08 00:30:52.681733500  00:30:52.681 [qtp2059904228-19] INFO  n.fekepp.ldps.converter.RdfConverter > Parsing > inputFormat=net.fekepp.ldps.format.TurtleFormat@762c1a11 | inputStream=java.io.FileInputStream@49ea1d4d | outputFormat=net.fekepp.ldps.format.RdfXmlFormat@2bbb5044 | outputStream=org.glassfish.jersey.message.internal.WriterInterceptorExecutor$UnCloseableOutputStream@5ed5a4dc | callback=net.fekepp.ldps.serializer.CallbackRdfXmlSerializer@7067a82
+2017-06-08 00:30:52.681747500  00:30:52.681 [qtp2059904228-19] INFO  e.k.a.d.i.s.AbstractSerialiser > Starting edu.kit.aifb.datafu.io.serialisers.RdfXmlSerialiser@ab20fb6
+2017-06-08 00:30:52.686542500  00:30:52.686 [qtp2059904228-16] INFO  e.k.a.d.io.http.ConnectionManager > Request/response: GET /d HTTP/1.1 [Accept: application/rdf+xml,application/n-triples,text/turtle,application/ld+json, User-Agent: ldfu 0.9.13-pr.0, Accept-Encoding: gzip, Host: d14.u3.dlubm.ddns.me, Connection: Keep-Alive]/HttpResponseProxy{HTTP/1.1 200 OK [Content-Type: application/rdf+xml, Date: Thu, 08 Jun 2017 00:30:52 GMT, Server: Jetty(9.2.21.v20170120), Transfer-Encoding: chunked] ResponseEntityProxy{[Content-Type: application/rdf+xml,Chunked: true]}}
+2017-06-08 00:30:52.686666500  00:30:52.686 [qtp2059904228-16] INFO  e.k.a.d.i.i.r.EvaluateRequestOrigin > GET http://d14.u3.dlubm.ddns.me/d: 200 status
+2017-06-08 00:30:52.686752500  00:30:52.686 [qtp2059904228-16] INFO  e.k.a.d.i.i.r.EvaluateRequestOrigin > Content type header application/rdf+xml, detected content type edu.kit.aifb.datafu.io.mediatypes.RdfXml@1070eb7a
+2017-06-08 00:30:52.852576500  00:30:52.852 [qtp2059904228-16] INFO  e.k.a.d.i.i.r.EvaluateRequestOrigin > Parsed http://d14.u3.dlubm.ddns.me/d
+2017-06-08 00:30:52.852689500  00:30:52.852 [qtp2059904228-16] INFO  e.k.a.d.i.i.r.EvaluateRequestOrigin > GET http://d14.u3.dlubm.ddns.me/d (http://d14.u3.dlubm.ddns.me/d, linked from null), status 200, OK
+2017-06-08 00:30:52.852772500  [INFO] GET http://d14.u3.dlubm.ddns.me/d: OK, 200 in 179 ms
+2017-06-08 00:30:52.853188500  00:30:52.853 [qtp2059904228-16] INFO  e.k.a.d.i.i.r.EvaluateRequestOrigin > Considering http://o.dlubm.ddns.me/univ-bench.owl, GET(http://o.dlubm.ddns.me/univ-bench.owl, depth 0)
+2017-06-08 00:30:52.853288500  00:30:52.853 [qtp2059904228-16] INFO  e.k.a.d.i.i.r.EvaluateRequestOrigin > Normalising document to http://o.dlubm.ddns.me/univ-bench.owl
+2017-06-08 00:30:52.858220500  00:30:52.858 [qtp2059904228-16] INFO  e.k.a.d.io.http.ConnectionManager > Request/response: GET /univ-bench.owl HTTP/1.1 [Accept: application/rdf+xml,application/n-triples,text/turtle,application/ld+json, User-Agent: ldfu 0.9.13-pr.0, Accept-Encoding: gzip, Host: o.dlubm.ddns.me, Connection: Keep-Alive]/HttpResponseProxy{HTTP/1.1 200 OK [Accept-Ranges: bytes, Content-Length: 14309, Content-Type: application/rdf+xml, Date: Thu, 08 Jun 2017 00:30:52 GMT, Etag: "592a8968-37e5", Last-Modified: Sun, 28 May 2017 08:25:12 GMT, Server: nginx] ResponseEntityProxy{[Content-Type: application/rdf+xml,Content-Length: 14309,Chunked: false]}}
+2017-06-08 00:30:52.858271500  00:30:52.858 [qtp2059904228-16] INFO  e.k.a.d.i.i.r.EvaluateRequestOrigin > GET http://o.dlubm.ddns.me/univ-bench.owl: 200 status
+2017-06-08 00:30:52.858328500  00:30:52.858 [qtp2059904228-16] INFO  e.k.a.d.i.i.r.EvaluateRequestOrigin > Content type header application/rdf+xml, detected content type edu.kit.aifb.datafu.io.mediatypes.RdfXml@1070eb7a
+2017-06-08 00:30:52.877562500  00:30:52.877 [qtp2059904228-16] INFO  e.k.a.d.i.i.r.EvaluateRequestOrigin > Parsed http://o.dlubm.ddns.me/univ-bench.owl
+2017-06-08 00:30:52.877642500  00:30:52.877 [qtp2059904228-16] INFO  e.k.a.d.i.i.r.EvaluateRequestOrigin > GET http://o.dlubm.ddns.me/univ-bench.owl (http://o.dlubm.ddns.me/univ-bench.owl, linked from null), status 200, OK
+2017-06-08 00:30:52.877725500  [INFO] GET http://o.dlubm.ddns.me/univ-bench.owl: OK, 200 in 24 ms
+2017-06-08 00:30:52.972407500  00:30:52.972 [qtp2059904228-16] INFO  e.k.aifb.datafu.io.sink.EvaluateSink > Shutdown edu.kit.aifb.datafu.io.sink.EvaluateSink@14a01398
+2017-06-08 00:30:52.972457500  00:30:52.972 [qtp2059904228-16] INFO  n.f.scal.run.QuerySinkResourceBridge > Sink -> Resource > Closed > evaluation/resources/dlubm-01
+2017-06-08 00:30:52.972731500  [INFO] Elapsed time: 303 ms, 2 input origins, 1,373,655 bytes, 5,861 base triples, 7,505 derived triples, 0 output origins, 0 bytes, 0 triples
+2017-06-08 00:30:52.974021500  00:30:52.973 [qtp2059904228-16] INFO  net.fekepp.scal.run.RunController > Evaluation end
+2017-06-08 00:30:52.974043500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@6fdf05da
+2017-06-08 00:30:52.974048500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.ContainerResourceListener@4e8170c9
+2017-06-08 00:30:52.974062500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@35f255be
+2017-06-08 00:30:52.974076500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@53656deb
+2017-06-08 00:30:52.974080500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@351bc56b
+2017-06-08 00:30:52.974082500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@258ee4be
+2017-06-08 00:30:52.974094500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.scal.run.DefaultRunManager$2@66b2d683
+2017-06-08 00:30:52.974099500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@31c1e150
+2017-06-08 00:30:52.974129500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@23ae17d7
+2017-06-08 00:30:52.974151500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@77ac2216
+2017-06-08 00:30:52.974181500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@7e26909d
+2017-06-08 00:30:52.974187500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5316fecd
+2017-06-08 00:30:52.974189500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@7274a66f
+2017-06-08 00:30:52.974190500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5f93c1ef
+2017-06-08 00:30:52.974192500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@31d33dec
+2017-06-08 00:30:52.974204500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > getResource(Description description) > description.getIdentifier()=evaluation/resources/dlubm-01
+2017-06-08 00:30:52.974217500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > Path > /var/lib/dlubm/evaluation/resources/dlubm-01
+2017-06-08 00:30:52.974428500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > Path is not a directory
+2017-06-08 00:30:52.975017500  00:30:52.974 [qtp2059904228-16] INFO  n.f.l.s.FilesystemStorageManager > Path is file with extension and known format > /var/lib/dlubm/evaluation/resources/dlubm-01.ttl
+2017-06-08 00:30:52.975431500  00:30:52.975 [qtp2059904228-16] INFO  n.fekepp.ldps.converter.RdfConverter > Parser found > inputFormat=net.fekepp.ldps.format.TurtleFormat@762c1a11 | parser=org.semanticweb.yars.turtle.TurtleParser@7a707a02
+2017-06-08 00:30:52.975518500  00:30:52.975 [qtp2059904228-16] INFO  n.fekepp.ldps.converter.RdfConverter > Serializer found > outputFormat=net.fekepp.ldps.format.RdfXmlFormat@2bbb5044 | serializer=net.fekepp.ldps.serializer.CallbackRdfXmlSerializer@1aed6f8e
+2017-06-08 00:30:52.975537500  00:30:52.975 [qtp2059904228-16] INFO  n.fekepp.ldps.converter.RdfConverter > Parsing > inputFormat=net.fekepp.ldps.format.TurtleFormat@762c1a11 | inputStream=java.io.FileInputStream@28b22d5e | outputFormat=net.fekepp.ldps.format.RdfXmlFormat@2bbb5044 | outputStream=org.glassfish.jersey.message.internal.WriterInterceptorExecutor$UnCloseableOutputStream@ebf624f | callback=net.fekepp.ldps.serializer.CallbackRdfXmlSerializer@1aed6f8e
+2017-06-08 00:30:52.975552500  00:30:52.975 [qtp2059904228-16] INFO  e.k.a.d.i.s.AbstractSerialiser > Starting edu.kit.aifb.datafu.io.serialisers.RdfXmlSerialiser@7766a9f0
+2017-06-08 00:30:56.168489500  00:30:56.168 [qtp2059904228-18] INFO  net.fekepp.ldps.server.Servlet > getResource(String path) > scal/current
+2017-06-08 00:30:56.168507500  00:30:56.168 [qtp2059904228-18] INFO  net.fekepp.ldps.server.Servlet > URI Base > http://d14.u3.dlubm.ddns.me/
+2017-06-08 00:30:56.168509500  00:30:56.168 [qtp2059904228-18] INFO  net.fekepp.ldps.server.Servlet > URI Path > /scal/current
+2017-06-08 00:30:56.168544500  00:30:56.168 [qtp2059904228-18] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > */*
+2017-06-08 00:30:56.168549500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5d5aab4
+2017-06-08 00:30:56.168562500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@6fdf05da
+2017-06-08 00:30:56.168567500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.ContainerResourceListener@4e8170c9
+2017-06-08 00:30:56.168598500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@35f255be
+2017-06-08 00:30:56.168603500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@53656deb
+2017-06-08 00:30:56.168605500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@351bc56b
+2017-06-08 00:30:56.168607500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@258ee4be
+2017-06-08 00:30:56.168609500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.scal.run.DefaultRunManager$2@66b2d683
+2017-06-08 00:30:56.168622500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@31c1e150
+2017-06-08 00:30:56.168626500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@23ae17d7
+2017-06-08 00:30:56.168628500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@77ac2216
+2017-06-08 00:30:56.168631500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@7e26909d
+2017-06-08 00:30:56.168642500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5316fecd
+2017-06-08 00:30:56.168646500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@7274a66f
+2017-06-08 00:30:56.168649500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@5f93c1ef
+2017-06-08 00:30:56.168659500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@31d33dec
+2017-06-08 00:30:56.168663500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.s.FilesystemStorageManager > getResource(Description description) > description.getIdentifier()=scal/current
+2017-06-08 00:30:56.168697500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.s.FilesystemStorageManager > Path > /var/lib/dlubm/scal/current
+2017-06-08 00:30:56.168766500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.s.FilesystemStorageManager > Path is not a directory
+2017-06-08 00:30:56.168783500  00:30:56.168 [qtp2059904228-18] INFO  n.f.l.s.FilesystemStorageManager > Path is file without extension

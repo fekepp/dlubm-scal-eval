@@ -1,0 +1,5 @@
+[INFO] Setup done in 566 ms, starting processing...
+[INFO] GET http://g.dlubm.ddns.me/evaluation/resources/dlubm-11: OK, 200 in 26,386 ms
+[INFO] Elapsed time: 26,400 ms, 1 input origins, 113 bytes, 0 base triples, -1 derived triples, 0 output origins, 0 bytes, 0 triples
+[INFO] InputQueue distinct size: -1, BaseTripleQueue distinct size: -1, DerivedTripleQueue distinct size -1, OutputQueue distinct size 0
+[INFO] JoinBindings size: 0, JoinBindings distinct size: 0

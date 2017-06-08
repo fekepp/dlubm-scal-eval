@@ -1,0 +1,74 @@
+#!/bin/bash
+
+
+# Include configuration
+source configuration
+
+
+
+
+echo "__________________________________________________"
+echo "__________________________________________________"
+echo "Global"
+
+
+# Containers
+echo "__________________________________________________"
+echo "PUT > Content-Type: text/turtle > http://g.dlubm.ddns.me/evaluation"
+curl -v -sS -X "PUT" -H "Content-Type: text/turtle" http://g.dlubm.ddns.me/evaluation --data-binary @resources/ldp-container.ttl
+
+echo "__________________________________________________"
+echo "PUT > Content-Type: text/turtle > http://g.dlubm.ddns.me/evaluation/programs"
+curl -v -sS -X "PUT" -H "Content-Type: text/turtle" http://g.dlubm.ddns.me/evaluation/programs --data-binary @resources/ldp-container.ttl
+
+echo "__________________________________________________"
+echo "PUT > Content-Type: text/turtle > http://g.dlubm.ddns.me/evaluation/queries"
+curl -v -sS -X "PUT" -H "Content-Type: text/turtle" http://g.dlubm.ddns.me/evaluation/queries --data-binary @resources/ldp-container.ttl
+
+echo "__________________________________________________"
+echo "PUT > Content-Type: text/turtle > http://g.dlubm.ddns.me/evaluation/resources"
+curl -v -sS -X "PUT" -H "Content-Type: text/turtle" http://g.dlubm.ddns.me/evaluation/resources --data-binary @resources/ldp-container.ttl
+
+
+# Programs
+echo "__________________________________________________"
+echo "PUT > Content-Type: text/n3 > http://g.dlubm.ddns.me/evaluation/programs/this"
+curl -v -sS -X "PUT" -H "Content-Type: text/n3" http://g.dlubm.ddns.me/evaluation/programs/this --data "<http://this#dlubm> <http://this#uri> <http://g.dlubm.ddns.me/g> ."
+
+echo "__________________________________________________"
+echo "PUT > Content-Type: text/n3 > http://g.dlubm.ddns.me/evaluation/programs/dlubm-getters"
+curl -v -sS -X "PUT" -H "Content-Type: text/n3" http://g.dlubm.ddns.me/evaluation/programs/dlubm-getters --data-binary @programs/dlubm-get-this-universities-departments.n3
+
+echo "__________________________________________________"
+echo "PUT > Content-Type: text/n3 > http://g.dlubm.ddns.me/evaluation/programs/rdfs"
+curl -v -sS -X "PUT" -H "Content-Type: text/n3" http://g.dlubm.ddns.me/evaluation/programs/rdfs --data-binary @rulesets/rdfs.n3
+
+echo "__________________________________________________"
+echo "PUT > Content-Type: text/n3 > http://g.dlubm.ddns.me/evaluation/programs/owl-imports"
+curl -v -sS -X "PUT" -H "Content-Type: text/n3" http://g.dlubm.ddns.me/evaluation/programs/owl-imports --data-binary @rulesets/owl-imports.n3
+
+
+for query_index in {01..14}
+do
+	
+	# Queries
+	echo "__________________________________________________"
+	echo "PUT > Content-Type: application/sparql-query > http://g.dlubm.ddns.me/evaluation/queries/dlubm-${query_index}"
+	curl -v -sS -X "PUT" -H "Content-Type: application/sparql-query" http://g.dlubm.ddns.me/evaluation/queries/dlubm-${query_index} --data-binary @queries/dlubm-${query_index}.rq
+	
+	
+	# Runs
+	echo "__________________________________________________"
+	echo "PUT > Content-Type: text/turtle > http://g.dlubm.ddns.me/evaluation/run-dlubm-${query_index}"
+	curl -v -sS -X "PUT" -H "Content-Type: text/turtle" http://g.dlubm.ddns.me/evaluation/run-dlubm-${query_index} --data-binary @resources/run-dlubm-${query_index}.ttl
+
+
+	# Start
+	echo "__________________________________________________"
+	echo "POST > Content-Type: text/turtle > http://g.dlubm.ddns.me/evaluation/run-dlubm-${query_index}"
+	curl -v -sS -X "POST" -H "Content-Type: text/turtle" http://g.dlubm.ddns.me/evaluation/run-dlubm-${query_index}
+	
+done
+
+
+

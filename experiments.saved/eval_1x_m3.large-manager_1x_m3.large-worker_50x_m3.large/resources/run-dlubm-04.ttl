@@ -1,0 +1,32 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix scal: <http://scal#> .
+
+<>
+	a scal:Run ;
+	scal:program [
+		a scal:Program ;
+		scal:declaration <programs/this>
+	] ;
+	scal:program [
+		a scal:Program ;
+		scal:declaration <programs/owl-imports>
+	] ;
+	scal:program [
+		a scal:Program ;
+		scal:declaration <programs/rdfs>
+	] ;
+	scal:program [
+		a scal:Program ;
+		scal:declaration <programs/dlubm-getters>
+	] ;
+	scal:query [
+		a scal:Query ;
+		scal:declaration <queries/dlubm-04> ;
+		scal:sink <resources/dlubm-04>
+	] ;
+	scal:trigger [
+		a scal:Trigger, scal:ResourceRequestedTrigger ;
+		scal:uri <resources/dlubm-04> ;
+		scal:method "GET"
+	]
+.

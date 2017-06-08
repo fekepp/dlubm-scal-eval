@@ -1,0 +1,9 @@
+[INFO] Setup done in 555 ms, starting processing...
+[INFO] GET http://u2.dlubm.ddns.me/evaluation/resources/dlubm-12: OK, 200 in 4,453 ms
+[INFO] GET http://u1.dlubm.ddns.me/evaluation/resources/dlubm-12: OK, 200 in 4,716 ms
+[INFO] GET http://u0.dlubm.ddns.me/evaluation/resources/dlubm-12: OK, 200 in 5,180 ms
+[INFO] GET http://u3.dlubm.ddns.me/evaluation/resources/dlubm-12: OK, 200 in 5,282 ms
+[INFO] GET http://u4.dlubm.ddns.me/evaluation/resources/dlubm-12: OK, 200 in 7,454 ms
+[INFO] Elapsed time: 7,493 ms, 5 input origins, 565 bytes, 0 base triples, -1 derived triples, 0 output origins, 0 bytes, 0 triples
+[INFO] InputQueue distinct size: -1, BaseTripleQueue distinct size: -1, DerivedTripleQueue distinct size -1, OutputQueue distinct size 0
+[INFO] JoinBindings size: 0, JoinBindings distinct size: 0

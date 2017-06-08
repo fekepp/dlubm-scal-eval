@@ -1,0 +1,33 @@
+2017-06-08 00:32:32.777989500  00:32:32.774 [qtp2059904228-14] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@4da7b44
+2017-06-08 00:32:32.777994500  00:32:32.774 [qtp2059904228-14] INFO  n.f.l.s.FilesystemStorageManager > getResource(Description description) > description.getIdentifier()=evaluation/resources/dlubm-12
+2017-06-08 00:32:32.777996500  00:32:32.774 [qtp2059904228-14] INFO  n.f.l.s.FilesystemStorageManager > Path > /var/lib/dlubm/evaluation/resources/dlubm-12
+2017-06-08 00:32:32.777997500  00:32:32.774 [qtp2059904228-14] INFO  n.f.l.s.FilesystemStorageManager > Path is not a directory
+2017-06-08 00:32:32.777998500  00:32:32.774 [qtp2059904228-14] INFO  n.f.l.s.FilesystemStorageManager > Path is file with extension and known format > /var/lib/dlubm/evaluation/resources/dlubm-12.ttl
+2017-06-08 00:32:32.778000500  00:32:32.775 [qtp2059904228-14] INFO  n.fekepp.ldps.converter.RdfConverter > Parser found > inputFormat=net.fekepp.ldps.format.TurtleFormat@762c1a11 | parser=org.semanticweb.yars.turtle.TurtleParser@254ed9ef
+2017-06-08 00:32:32.778001500  00:32:32.775 [qtp2059904228-14] INFO  n.fekepp.ldps.converter.RdfConverter > Serializer found > outputFormat=net.fekepp.ldps.format.RdfXmlFormat@2bbb5044 | serializer=net.fekepp.ldps.serializer.CallbackRdfXmlSerializer@5523e4eb
+2017-06-08 00:32:32.778003500  00:32:32.775 [qtp2059904228-14] INFO  n.fekepp.ldps.converter.RdfConverter > Parsing > inputFormat=net.fekepp.ldps.format.TurtleFormat@762c1a11 | inputStream=java.io.FileInputStream@6335865a | outputFormat=net.fekepp.ldps.format.RdfXmlFormat@2bbb5044 | outputStream=org.glassfish.jersey.message.internal.WriterInterceptorExecutor$UnCloseableOutputStream@3a29ec5 | callback=net.fekepp.ldps.serializer.CallbackRdfXmlSerializer@5523e4eb
+2017-06-08 00:32:32.778004500  00:32:32.775 [qtp2059904228-14] INFO  e.k.a.d.i.s.AbstractSerialiser > Starting edu.kit.aifb.datafu.io.serialisers.RdfXmlSerialiser@5070aeff
+2017-06-08 00:32:37.772461500  00:32:37.772 [qtp2059904228-19] INFO  net.fekepp.ldps.server.Servlet > getResource(String path) > scal/current
+2017-06-08 00:32:37.772480500  00:32:37.772 [qtp2059904228-19] INFO  net.fekepp.ldps.server.Servlet > URI Base > http://d17.u4.dlubm.ddns.me/
+2017-06-08 00:32:37.772482500  00:32:37.772 [qtp2059904228-19] INFO  net.fekepp.ldps.server.Servlet > URI Path > /scal/current
+2017-06-08 00:32:37.772525500  00:32:37.772 [qtp2059904228-19] INFO  net.fekepp.ldps.server.Servlet > httpHeaders.getAcceptableMediaTypes() > */*
+2017-06-08 00:32:37.772530500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@25e6d244
+2017-06-08 00:32:37.772533500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.ContainerResourceListener@4e8170c9
+2017-06-08 00:32:37.772546500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@361c9236
+2017-06-08 00:32:37.772551500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@593fa0d4
+2017-06-08 00:32:37.772563500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@1eb14e5e
+2017-06-08 00:32:37.772567500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@31a34193
+2017-06-08 00:32:37.772570500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@6c296379
+2017-06-08 00:32:37.772581500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.scal.run.DefaultRunManager$2@66b2d683
+2017-06-08 00:32:37.772585500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@146de67c
+2017-06-08 00:32:37.772588500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@49cbded9
+2017-06-08 00:32:37.772625500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@3a47f7d2
+2017-06-08 00:32:37.772630500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@6d9e80a6
+2017-06-08 00:32:37.772632500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@6c0b0b31
+2017-06-08 00:32:37.772634500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@3054908e
+2017-06-08 00:32:37.772636500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@51a936b7
+2017-06-08 00:32:37.772637500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.r.DefaultResourceManager > Check interest of listener > net.fekepp.ldps.listener.DefaultResourceListener@4da7b44
+2017-06-08 00:32:37.772649500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.s.FilesystemStorageManager > getResource(Description description) > description.getIdentifier()=scal/current
+2017-06-08 00:32:37.772653500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.s.FilesystemStorageManager > Path > /var/lib/dlubm/scal/current
+2017-06-08 00:32:37.772709500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.s.FilesystemStorageManager > Path is not a directory
+2017-06-08 00:32:37.772726500  00:32:37.772 [qtp2059904228-19] INFO  n.f.l.s.FilesystemStorageManager > Path is file without extension
