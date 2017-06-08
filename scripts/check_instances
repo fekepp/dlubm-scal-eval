@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ldfu -p resources/global-this.ttl -p programs/dlubm-get-this-universities-departments.n3 2>&1 >/dev/null | grep -v "ERROR, 404" | grep -v "ERROR, -1" | grep -v "Elapsed" | grep -v "InputQueue" | grep -v "JoinBindings"

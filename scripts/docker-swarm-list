@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+# Include configuration
+source configuration
+
+
+echo "Retrieve first manager instance name"
+first_manager_instance_name="$(docker-machine ls -q | grep "${INSTANCE_NAME_PREFIX_SWARM_MANAGER}[0-9]*0$")"
+echo "Retrieved first manager instance name > ${first_manager_instance_name}"
+
+
+echo "Retrieve node list from manager"
+node_list=$(docker-machine ssh "${first_manager_instance_name}" "docker node ls")
+echo -e "Retrieved node list from manager >\n${node_list}"
+

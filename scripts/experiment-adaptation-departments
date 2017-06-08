@@ -1,0 +1,97 @@
+#!/bin/bash
+
+
+# Include configuration
+source configuration
+
+
+department_amounts=(15 19 16 21 22)
+
+
+university_index_first=0
+university_index_last=$(expr $UNIVERSITY_AMOUNT - 1)
+university_index_padding=${#university_index_last}
+
+
+for university_index in $(seq ${university_index_first} ${university_index_last})
+do
+	
+	department_index_first=0
+	department_index_last=$(expr ${department_amounts[${university_index}]} - 1)
+	department_index_padding=${#department_index_last}
+	
+	for department_index in $(seq ${department_index_first} ${department_index_last})
+	do
+	
+		echo "__________________________________________________"
+		echo "__________________________________________________"
+		echo "University ${university_index}"
+		echo "Department ${department_index}"
+		
+		
+		# Containers
+		echo "__________________________________________________"
+		echo "PUT > Content-Type: text/turtle > http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation"
+		curl -v -sS -X "PUT" -H "Content-Type: text/turtle" http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation --data-binary @resources/ldp-container.ttl
+		
+		echo "__________________________________________________"
+		echo "PUT > Content-Type: text/turtle > http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/programs"
+		curl -v -sS -X "PUT" -H "Content-Type: text/turtle" http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/programs --data-binary @resources/ldp-container.ttl
+		
+		echo "__________________________________________________"
+		echo "PUT > Content-Type: text/turtle > http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/queries"
+		curl -v -sS -X "PUT" -H "Content-Type: text/turtle" http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/queries --data-binary @resources/ldp-container.ttl
+		
+		echo "__________________________________________________"
+		echo "PUT > Content-Type: text/turtle > http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/resources"
+		curl -v -sS -X "PUT" -H "Content-Type: text/turtle" http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/resources --data-binary @resources/ldp-container.ttl
+		
+		
+		# Programs
+		echo "__________________________________________________"
+		echo "PUT > Content-Type: text/n3 > http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/programs/this"
+		curl -v -sS -X "PUT" -H "Content-Type: text/n3" http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/programs/this --data "<http://this#dlubm> <http://this#uri> <http://d${department_index}.u${university_index}.dlubm.ddns.me/d> ."
+		
+		echo "__________________________________________________"
+		echo "PUT > Content-Type: text/n3 > http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/programs/dlubm-getters"
+		curl -v -sS -X "PUT" -H "Content-Type: text/n3" http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/programs/dlubm-getters --data-binary @programs/dlubm-get-this.n3
+		
+		echo "__________________________________________________"
+		echo "PUT > Content-Type: text/n3 > http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/programs/owl-ld"
+		curl -v -sS -X "PUT" -H "Content-Type: text/n3" http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/programs/owl-ld --data-binary @rulesets/owl-ld.n3
+	
+		echo "__________________________________________________"
+		echo "PUT > Content-Type: text/n3 > http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/programs/owl-imports"
+		curl -v -sS -X "PUT" -H "Content-Type: text/n3" http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/programs/owl-imports --data-binary @rulesets/owl-imports.n3
+		
+		
+		for query_index in {01..14}
+		do
+			
+			# Queries
+			echo "__________________________________________________"
+			echo "PUT > Content-Type: application/sparql-query > http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/queries/dlubm-${query_index}"
+			curl -v -sS -X "PUT" -H "Content-Type: application/sparql-query" http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/queries/dlubm-${query_index} --data-binary @queries/dlubm-${query_index}.rq
+			
+			
+			# Runs
+			echo "__________________________________________________"
+			echo "PUT > Content-Type: text/turtle > http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/run-dlubm-${query_index}"
+			curl -v -sS -X "PUT" -H "Content-Type: text/turtle" http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/run-dlubm-${query_index} --data-binary @resources/run-dlubm-${query_index}.ttl
+			
+			
+			# Start
+			echo "__________________________________________________"
+			echo "POST > Content-Type: text/turtle > http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/run-dlubm-${query_index}"
+			curl -v -sS -X "POST" -H "Content-Type: text/turtle" http://d${department_index}.u${university_index}.dlubm.ddns.me/evaluation/run-dlubm-${query_index}
+			
+		done
+		
+		sleep 2
+		
+	done
+	
+done
+
+
+
